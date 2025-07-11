@@ -1,46 +1,102 @@
-# Getting Started with Create React App
+#  AI-Powered Food Donation Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application that connects food donors with recipients using AI-based models to optimize donation safety, demand prediction, and delivery routing. Built with React.js (TypeScript), Flask, and integrated with machine learning models and Google Maps API.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+##  Features
 
-### `npm start`
+- **Food Image Recognition** using MobileNetV2(Food 101 dataset from kaggle)
+- **Food Safety Prediction** using SVM (temperature, expiration)
+- **Route Optimization** using Deep Q-Network (DQN) and Google Maps
+- **Food Demand Clustering** using KMeans & DBSCAN
+-  **Location-based Donation & Request System**
+-  User authentication and secure food request workflow
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+##  Tech Stack
 
-### `npm test`
+###  Frontend
+- React.js (TypeScript)
+- Google Maps JavaScript API
+- HTML, CSS, JavaScript
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###  Machine Learning
+- MobileNetV2 (TensorFlow, Keras)
+- Support Vector Machine (Scikit-learn)
+- DQN (Reinforcement Learning)
+- KMeans, DBSCAN (Clustering)
 
-### `npm run build`
+###  Backend
+- Flask (Python) – ML and API layer
+- Node.js + Express – Web API 
+- MongoDB + Mongoose – Database
+- JWT & bcrypt – Authentication
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##  Project Structure
+FoodSave/
+│
+├── flask-api/ # ML models and Flask server
+├── frontend/ # React.js frontend
+├── node-backend/ # (Optional) Node.js backend
+├── README.md
+├── .gitignore
+└── requirements.txt / package.json
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##  How to Run the Project
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/FoodSave.git
+cd food-donation-app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 2. Flask API (Machine Learning)
+cd flask-api
+pip install -r requirements.txt
+python app.py
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### 3. Frontend (React)
+cd ../frontend
+npm install
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. Node Backend
+cd ../node-backend
+npm install
+node index.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ ML Models Overview
+MobileNetV2: Identifies the food type from uploaded images.
+
+SVM: Predicts if food is safe to donate based on temp_stored, days_to_expire, and food type.
+
+DQN: Learns optimal delivery routes between donors and recipients.
+
+KMeans & DBSCAN: Classify regions into high/low demand areas based on food request clusters.
+
+ Authentication
+Users can sign up, log in, and submit donations or requests.
+
+Authentication is secured using JWT and passwords are hashed with bcrypt.
+
+ Author
+Tarik Haik
+Computer Engineering Graduate – Istinye University
+Email: tarekhayek002@gmail.com
+Location: Istanbul, Turkey
+
+
+
+
+
+
+
+
+
